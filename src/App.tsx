@@ -4,8 +4,6 @@ import { Suspense, useMemo } from "react";
 import Loading from "./components/loader";
 import React from "react";
 import "antd/dist/antd.css";
-import "./assets/styles/layout.scss";
-import Layout from "./layout";
 import { createStore, applyMiddleware, compose } from "redux";
 import createSagaMiddleware from "redux-saga";
 import { createHashHistory } from "history";
@@ -47,9 +45,7 @@ const App = () => {
     <>
       <Router>
         <Provider store={store}>
-          <Layout>
-            <Suspense fallback={<Loading />}>{createRoutes}</Suspense>
-          </Layout>
+          <Suspense fallback={<Loading />}>{createRoutes}</Suspense>
         </Provider>
       </Router>
     </>

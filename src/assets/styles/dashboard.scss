@@ -1,1 +1,36 @@
+#root {
+  height: 100%;
+  .image-swapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 5px 0 0 5px;
+    background-color: #986a6a1c;
+    overflow: auto;
+    .item {
+      width: 25%;
+      height: 350px;
+      background-color: #986a6a1c;
+      padding: 0 5px 5px 0px;
 
+      .avartar-info {
+        img {
+          width: 20px;
+          height: 20px;
+        }
+        span {
+          color: #00bfff;
+        }
+      }
+      .ant-image {
+        height: 300px;
+        width: 100%;
+        .ant-image-img {
+          height: 100%;
+          padding: 10px 10px 30px 10px;
+          background-color: white;
+        }
+      }
+    }
+  }
+}

@@ -7,11 +7,8 @@ import { DashboardActions } from "./types";
 export function* fetchImages(params) {
   const { payload } = params;
   try {
-    const {
-      data: { data },
-    } = yield call(dashboardServices.fetchImages, payload);
-
-    yield put(fetchImagesSuccessAction({ data }));
+    const response = yield call(dashboardServices.fetchImages, payload);
+    yield put(fetchImagesSuccessAction({ ...response }));
   } catch (e) {
     yield put(fetchImagesFailedAction({ error: get(e, "data.message") }));
   }

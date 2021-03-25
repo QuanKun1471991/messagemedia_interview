@@ -12,7 +12,7 @@ export const initialState: IDashboardState = {
     error: "",
     data: [],
     total: 0,
-    limit: 0,
+    limit: 20,
     offset: 0,
   },
 };
@@ -30,9 +30,12 @@ const dashboardReducer: Reducer<IDashboardState, DashboardActionTypes> = (
         return draft;
       }
       case DashboardActions.FETCH_IMAGES_SUCCESS: {
-        const { data } = action.payload;
+        const { data, pagination } = action.payload;
         draft.images.loading = false;
-        draft.images.data = data;
+        draft.images.data = [...draft.images.data, ...data];
+        draft.images.total = pagination.total;
+        draft.images.limit = pagination.limit;
+        draft.images.offset = pagination.offset + pagination.limit;
 
         return draft;
       }

@@ -1,12 +1,11 @@
 import { Route } from "react-router-dom";
 import React, { LazyExoticComponent, MemoExoticComponent } from "react";
+import { ConnectedComponent } from "react-redux";
 
 interface RouteProps {
   exact: boolean;
   pathName: string;
-  component:
-    | React.LazyExoticComponent<() => JSX.Element>
-    | LazyExoticComponent<MemoExoticComponent<() => JSX.Element>>;
+  component: any;
 }
 
 //private route

@@ -11,6 +11,7 @@ export interface IDashboardState {
 
 export interface FetchImagesParams {
   limit: number;
+  offset: number;
 }
 
 export enum DashboardActions {
@@ -27,6 +28,11 @@ export interface FetchImagesSuccessAction {
   type: DashboardActions.FETCH_IMAGES_SUCCESS;
   payload: {
     data: [];
+    pagination: {
+      total: number;
+      limit: number;
+      offset: number;
+    };
   };
 }
 
