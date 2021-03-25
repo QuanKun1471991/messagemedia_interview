@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import "../../assets/styles/dashboard.scss";
 import { fetchImagesAction } from "../../services/dashboard/actions";
 import { connect } from "react-redux";
-import { Image } from "antd";
+import Image from "components/image";
 
 const Index = ({ dashboard }) => {
   const dispatch = useDispatch();
@@ -27,29 +27,15 @@ const Index = ({ dashboard }) => {
     }
   }, [isBottom]);
 
-  const onScrollEvent = (e) => {
+  const onScrollEvent = useCallback((e) => {
     const el = e.target.documentElement;
     const bottom = el.scrollHeight - el.scrollTop === el.clientHeight;
     if (bottom) {
       setIsBottom(true);
     }
-  };
+  }, []);
 
-  return (
-    <div className={"image-swapper"} onScroll={(e) => onScrollEvent(e)}>
-      {imageList.map((image) => (
-        <>
-          <div className={"item"}>
-            <Image src={image.url} alt={image.title} />
-            <div className="avartar-info">
-              <img src={image.avatarUrl} alt={image.userName}></img> &nbsp;
-              <span>{image.userName}</span>
-            </div>
-          </div>
-        </>
-      ))}
-    </div>
-  );
+  return <Image imageList={imageList} onScrollEvent={onScrollEvent} />;
 };
 
 const mapStateToProps = (state: any) => ({

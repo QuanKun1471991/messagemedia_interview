@@ -9,6 +9,14 @@ export interface IDashboardState {
   };
 }
 
+export interface imagesDataProps {
+  url: string;
+  userName: string;
+  avatarUrl: string;
+  title: string;
+  profileUrl: string;
+}
+
 export interface FetchImagesParams {
   limit: number;
   offset: number;
