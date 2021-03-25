@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Switch } from "react-router-dom";
+import { makeRoute, privateRoutes, publicRoutes } from "./core/contants/routes";
+import { Suspense, useMemo } from "react";
+import Loading from "./components/loader";
+import React from "react";
+import "antd/dist/antd.css";
+import "./assets/styles/layout.scss";
+import Layout from "./layout";
+const App = () => {
+  const createRoutes = useMemo(() => {
+    return (
+      <>
+        <Switch>
+          {privateRoutes.map(makeRoute)}
+          {publicRoutes.map(makeRoute)}
+        </Switch>
+      </>
+    );
+  }, []);
 
-function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <Layout>
+          <Suspense fallback={<Loading />}>{createRoutes}</Suspense>
+        </Layout>
+      </Router>
+    </>
   );
-}
+};
 
 export default App;
