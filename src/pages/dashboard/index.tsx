@@ -30,9 +30,7 @@ const Index = ({ dashboard }) => {
   const onScrollEvent = useCallback((e) => {
     const el = e.target.documentElement;
     const bottom = el.scrollHeight - el.scrollTop === el.clientHeight;
-    if (bottom) {
-      setIsBottom(true);
-    }
+    if (bottom) setIsBottom(true);
   }, []);
 
   return <Image imageList={imageList} onScrollEvent={onScrollEvent} />;

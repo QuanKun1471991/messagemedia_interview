@@ -10,7 +10,7 @@ const Index = ({ url, title, className = "" }: imageInfoProps) => {
   return (
     <div className="image-info">
       <Image src={url} alt={title} />
-      <div className={className}>test</div>
+      <div className={className}>{title}</div>
     </div>
   );
 };

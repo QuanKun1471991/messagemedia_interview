@@ -5,14 +5,13 @@
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      padding: 10px 0 0 5px;
       background-color: #986a6a1c;
       overflow: auto;
       .item {
         width: 50%;
         height: 400px;
         background-color: #986a6a1c;
-        padding: 0 5px 5px 0px;
+        padding: 10px;
 
         .avartar-info {
           padding: 5px;
@@ -25,6 +24,7 @@
           }
         }
         .image-info {
+          border-radius: 5px;
           background-color: white;
           padding: 10px;
           .ant-image {
@@ -36,6 +36,8 @@
           }
           .details {
             background-color: white;
+            text-align: center;
+            color: blue;
           }
         }
       }
@@ -45,44 +47,9 @@
 
 @media (min-width: 768px) {
   #root {
-    height: 100%;
     .image-swapper {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      padding: 10px 0 0 5px;
-      background-color: #986a6a1c;
-      overflow: auto;
       .item {
         width: 33%;
-        height: 400px;
-        background-color: #986a6a1c;
-        padding: 0 5px 5px 0px;
-
-        .avartar-info {
-          padding: 5px;
-          img {
-            width: 20px;
-            height: 20px;
-          }
-          span {
-            color: #00bfff;
-          }
-        }
-        .image-info {
-          background-color: white;
-          padding: 10px;
-          .ant-image {
-            height: 300px;
-            width: 100%;
-            .ant-image-img {
-              height: 100%;
-            }
-          }
-          .details {
-            background-color: white;
-          }
-        }
       }
     }
   }
@@ -90,44 +57,9 @@
 
 @media (min-width: 1028px) {
   #root {
-    height: 100%;
     .image-swapper {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      padding: 10px 0 0 5px;
-      background-color: #986a6a1c;
-      overflow: auto;
       .item {
         width: 25%;
-        height: 400px;
-        background-color: #986a6a1c;
-        padding: 0 5px 5px 0px;
-
-        .avartar-info {
-          padding: 5px;
-          img {
-            width: 20px;
-            height: 20px;
-          }
-          span {
-            color: #00bfff;
-          }
-        }
-        .image-info {
-          background-color: white;
-          padding: 10px;
-          .ant-image {
-            height: 300px;
-            width: 100%;
-            .ant-image-img {
-              height: 100%;
-            }
-          }
-          .details {
-            background-color: white;
-          }
-        }
       }
     }
   }
