@@ -4,6 +4,7 @@ import { Suspense, useMemo } from "react";
 import Loading from "./components/loader";
 import React from "react";
 import "antd/dist/antd.css";
+import "./assets/styles/loader.scss";
 import { createStore, applyMiddleware, compose } from "redux";
 import createSagaMiddleware from "redux-saga";
 import { createHashHistory } from "history";
