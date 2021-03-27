@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import "../../assets/styles/dashboard.scss";
 import { fetchImagesAction } from "../../services/dashboard/actions";
 import { connect } from "react-redux";
-import Image from "components/Image";
+import Image from "components/Imageb";
 
 const Index = ({ dashboard }) => {
   const dispatch = useDispatch();

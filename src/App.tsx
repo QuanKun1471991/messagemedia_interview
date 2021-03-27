@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Switch } from "react-router-dom";
 import { makeRoute, privateRoutes, publicRoutes } from "./core/contants/routes";
 import { Suspense, useMemo } from "react";
-import Loading from "./components/Loader";
+import Loading from "./components/Loadera";
 import React from "react";
 import "antd/dist/antd.css";
 import "./assets/styles/loader.scss";
