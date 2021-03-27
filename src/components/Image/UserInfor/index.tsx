@@ -14,7 +14,7 @@ const Index = ({
 }: userInfoProps) => {
   return (
     <div className={className}>
-      <img src={avatarUrl} alt={userName}></img> &nbsp;
+      <img src={avatarUrl} alt={userName} />
       <a href={profileUrl} target="_blank" rel="noreferrer">
         {userName}
       </a>
