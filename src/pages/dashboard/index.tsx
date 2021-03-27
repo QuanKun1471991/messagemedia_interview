@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import "../../assets/styles/dashboard.scss";
 import { fetchImagesAction } from "../../services/dashboard/actions";
 import { connect } from "react-redux";
-import Image from "components/image";
+import Image from "components/Image";
 
 const Index = ({ dashboard }) => {
   const dispatch = useDispatch();
@@ -18,6 +18,7 @@ const Index = ({ dashboard }) => {
     return () => {
       document.removeEventListener("scroll", onScrollEvent);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -25,12 +26,15 @@ const Index = ({ dashboard }) => {
       dispatch(fetchImagesAction({ limit, offset }));
       setIsBottom(!isBottom);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isBottom]);
 
   const onScrollEvent = useCallback((e) => {
     const el = e.target.documentElement;
-    const bottom = el.scrollHeight - el.scrollTop === el.clientHeight;
-    if (bottom) setIsBottom(true);
+    if (el && el.scrollHeight && el.scrollTop) {
+      const bottom = el.scrollHeight - el.scrollTop === el.clientHeight;
+      if (bottom) setIsBottom(true);
+    }
   }, []);
 
   return <Image imageList={imageList} onScrollEvent={onScrollEvent} />;

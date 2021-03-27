@@ -1,6 +1,5 @@
 import { Route } from "react-router-dom";
-import React, { LazyExoticComponent, MemoExoticComponent } from "react";
-import { ConnectedComponent } from "react-redux";
+import React from "react";
 
 interface RouteProps {
   exact: boolean;

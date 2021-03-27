@@ -10,6 +10,7 @@ export interface IDashboardState {
 }
 
 export interface imagesDataProps {
+  id: string;
   url: string;
   userName: string;
   avatarUrl: string;

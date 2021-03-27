@@ -1,4 +1,3 @@
-import { produce } from "immer";
 import { stringify } from "qs";
 import axios from "core/contants/axios";
 import { FetchImagesParams } from "./types";

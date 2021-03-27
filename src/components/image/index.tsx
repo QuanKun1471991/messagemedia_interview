@@ -1,6 +1,6 @@
 import React from "react";
-import ImageInfor from "./imageInfor";
-import UserInfo from "./userInfor";
+import ImageInfor from "./ImageInfor";
+import UserInfo from "./UserInfor";
 import { imagesDataProps } from "../../services/dashboard/types";
 
 interface imageProps {
@@ -13,7 +13,7 @@ const Index = ({ imageList, onScrollEvent }: imageProps) => {
     <div className={"image-swapper"} onScroll={onScrollEvent}>
       {imageList.map((image) => (
         <>
-          <div className={"item"}>
+          <div className={"item"} key={image.id}>
             <ImageInfor
               className={"details"}
               url={image.url}

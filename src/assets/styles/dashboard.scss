@@ -9,7 +9,7 @@
       overflow: auto;
       .item {
         width: 50%;
-        height: 400px;
+        height: 200px;
         background-color: #986a6a1c;
         padding: 10px;
 
@@ -28,16 +28,24 @@
           background-color: white;
           padding: 10px;
           .ant-image {
-            height: 300px;
-            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+
             .ant-image-img {
               height: 100%;
+              width: auto;
             }
           }
           .details {
             background-color: white;
             text-align: center;
             color: blue;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
           }
         }
       }
@@ -50,6 +58,12 @@
     .image-swapper {
       .item {
         width: 33%;
+        height: 300px;
+        .image-info {
+          .ant-image {
+            height: 200px;
+          }
+        }
       }
     }
   }
@@ -60,6 +74,12 @@
     .image-swapper {
       .item {
         width: 25%;
+        height: 400px;
+        .image-info {
+          .ant-image {
+            height: 300px;
+          }
+        }
       }
     }
   }
