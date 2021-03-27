@@ -12,21 +12,19 @@ const Index = ({ imageList, onScrollEvent }: imageProps) => {
   return (
     <div className={"image-swapper"} onScroll={onScrollEvent}>
       {imageList.map((image) => (
-        <>
-          <div className={"item"} key={image.id}>
-            <ImageInfor
-              className={"details"}
-              url={image.url}
-              title={image.title}
-            />
-            <UserInfo
-              avatarUrl={image.avatarUrl}
-              userName={image.userName}
-              profileUrl={image.profileUrl}
-              className="avartar-info"
-            />
-          </div>
-        </>
+        <div className={"item"} key={image.id}>
+          <ImageInfor
+            className={"details"}
+            url={image.url}
+            title={image.title}
+          />
+          <UserInfo
+            avatarUrl={image.avatarUrl}
+            userName={image.userName}
+            profileUrl={image.profileUrl}
+            className="avartar-info"
+          />
+        </div>
       ))}
     </div>
   );
