@@ -7,6 +7,7 @@ import "antd/dist/antd.css";
 import "./assets/styles/loader.scss";
 import { Provider } from "react-redux";
 import store from "services/store";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 const App = () => {
   const createRoutes = useMemo(() => {
@@ -20,9 +21,11 @@ const App = () => {
 
   return (
     <Router>
-      <Provider store={store()}>
-        <Suspense fallback={<Loading />}>{createRoutes}</Suspense>
-      </Provider>
+      <ErrorBoundary>
+        <Provider store={store()}>
+          <Suspense fallback={<Loading />}>{createRoutes}</Suspense>
+        </Provider>
+      </ErrorBoundary>
     </Router>
   );
 };
